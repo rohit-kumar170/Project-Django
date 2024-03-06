@@ -1,0 +1,49 @@
+{% load static %}
+<html>
+    <head>
+        <title> </title>
+        <link rel="stylesheet" href={% static 'shop/style.css' %}
+    </head>
+    <body>
+        <form >
+        <div class="search-card">
+        <input type="search"placeholder="Searh for product" name="item_name" class="search">
+        <button type="submit" class="search-btn">Submit</button>
+        </div>
+    </form>
+
+
+        <div class="container">
+
+        {% for product in product_objects %}
+        <div class="card">
+            <div class="image"><img src="{{product.image}}"width="300px" height="200px"></div>
+            <div class="card-title">{{product.title}}</div>
+            <div class="card-text">Rs.{{ product.price }}</div>
+            </div>
+        {% endfor %}
+        </div>
+
+        <div class="paginator">
+           
+            {% if product_objects.has_previous %}
+            
+          <a class="btn-fcc" href="?page={{ product_objects.previous_page_number }}">Previous</a>
+                
+            {% endif %}
+
+
+            
+             <a class="btn-fcc" href="?page={{ product_objects.number }}">Current</a>
+                
+
+
+            {% if product_objects.has_next %}
+            
+             <a class="btn-fcc" href="?page={{ product_objects.next_page_number }}">Next</a>
+            
+            {% endif %}
+            
+        </div>
+    </body>
+    </html>

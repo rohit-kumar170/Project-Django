@@ -1,0 +1,27 @@
+{% extends 'food/base.html' %} {% block body %}
+<div class="row">
+  <div class="col-md-4 offset-md-4">
+    <div class="card">
+      <div class="card-header bg-info text-white">
+        <div class="card-title">Login</div>
+      </div>
+      <div class="card-body">
+        <form method="post">
+          {% csrf_token %} {% for field in form %}
+          <div class="form-group">{{field.name}} {{field}}</div>
+          <br />
+          {% endfor %}
+          <button type="submit" class="btn-info">Login</button>
+
+          <br />
+
+          <a href="{% url 'social:begin' 'google-oauth2' %}?next={{ request.GET.next }}">
+            <img src="{{ user.profile.image.url}} " alt="Sign in with Google"/>
+          </a>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends 'base.html' %} {% block content %}
+<h2>Login</h2>
+<a href="{% url 'social:begin' 'google-oauth2' %}?next={{ request.GET.next }}">
+  <img
+    src="{% static 'images/google_signin_button.png' %}"
+    alt="Sign in with Google"
+  />
+</a>
+{% endblock %}

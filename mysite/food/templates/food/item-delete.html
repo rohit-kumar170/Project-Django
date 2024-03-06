@@ -1,0 +1,14 @@
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+    {% block body %}
+    <form method="POST">
+      {% csrf_token %}
+      <h2>Are you sure want to delte {{item.item_name}}</h2>
+      <button type="submit">Confirm</button>
+    </form>
+    {% endblock %}
+  </body>
+</html>
