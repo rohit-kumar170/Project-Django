@@ -1,0 +1,28 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    height: 80vh;
+}
+
+.flexbox{
+    padding: auto;
+    gap:20px;
+    display: flex;
+}
+
+
+.btn-fcc {
+    color: black;
+    border-radius: 10px;
+
+}
+.btn-details{
+    margin: 5px;
+    border-radius: 10px;
+}
+
+.btn-cart{
+    margin: 5px;
+    border-radius: 10px;
+}
